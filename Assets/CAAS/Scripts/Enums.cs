@@ -1,10 +1,22 @@
-﻿public enum CardType
+﻿public enum CardStatus
 {
-    CLUB,HEART,SPADE,DIAMOND
+    UP,
+    DOWN
 }
-public enum CardValye
+public enum CardMovementDirection
 {
-    A = 1,
+    NONE,
+    LEFT,
+    RIGHT
+}
+public enum CardType
+{
+    NONE,CLUB,HEART,SPADE,DIAMOND
+}
+public enum CardValue
+{
+    NONE = 0,
+    A,
     TWO,
     THREE,
     FOUR,
