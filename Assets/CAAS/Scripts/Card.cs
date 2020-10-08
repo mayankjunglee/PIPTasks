@@ -25,29 +25,42 @@ public class Card : MonoBehaviour
     {
         pZOrder = renderOrder;
     }
+    #if UNITY_EDITOR
     private void OnMouseDown() {
+        Debug.Log("OnMouseDown");
         Input.multiTouchEnabled = false;
-        ToggleCardStatus();
         Vector2 point = mMain.ScreenToWorldPoint(Input.mousePosition);
-        
-        mOffset = new Vector2(transform.position.x - point.x,transform.position.y-point.y);
-        mCardManager.OnCardMouseDown(this);
+        OnCustomMouseDown(point);
     }
     private void OnMouseUp() {
         Vector2 point = mMain.ScreenToWorldPoint(Input.mousePosition);
-
-        transform.position = new Vector3(point.x+mOffset.x,point.y+mOffset.y,pZOrder);
-        mCardManager.OnCardMouseUp(this);
+        OnCustomMouseUp(point);
         Input.multiTouchEnabled = true;
     }
     private void OnMouseDrag() {
         Vector2 point = mMain.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(point.x+mOffset.x,point.y+mOffset.y,pZOrder);
-        mCardManager.OnCardMouseDrag(this);
+        OnCustomMouseDrag(point);
     }
-
+    #endif
     private void ToggleCardStatus()
     {
         pCardStatus = pCardStatus==CardStatus.DOWN?CardStatus.UP:CardStatus.DOWN;
+    }
+
+    public void OnCustomMouseDown(Vector2 point)
+    {
+        ToggleCardStatus();
+        mOffset = new Vector2(transform.position.x - point.x,transform.position.y-point.y);
+        mCardManager.OnCardMouseDown(this);
+    }
+    public void OnCustomMouseDrag(Vector2 point)
+    {
+        transform.position = new Vector3(point.x+mOffset.x,point.y+mOffset.y,pZOrder);
+        mCardManager.OnCardMouseDrag(this);
+    }
+    public void OnCustomMouseUp(Vector2 point)
+    {
+        transform.position = new Vector3(point.x+mOffset.x,point.y+mOffset.y,pZOrder);
+        mCardManager.OnCardMouseUp(this);
     }
 }

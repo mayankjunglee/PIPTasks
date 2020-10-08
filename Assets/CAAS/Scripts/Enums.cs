@@ -3,12 +3,6 @@
     UP,
     DOWN
 }
-public enum CardMovementDirection
-{
-    NONE,
-    LEFT,
-    RIGHT
-}
 public enum CardType
 {
     NONE,CLUB,HEART,SPADE,DIAMOND
