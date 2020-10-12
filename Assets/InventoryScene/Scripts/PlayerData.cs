@@ -28,8 +28,9 @@ public class PlayerDataOneUnit
 {
     public string ItemID;
     public int ItemValue;
+    public string ItemName;
     public override string ToString()
     {
-        return $"ItemID {ItemID}, ItemValue {ItemValue}";
+        return $"ItemID {ItemID}, ItemValue {ItemValue}, ItemName {ItemName}";
     }
 }

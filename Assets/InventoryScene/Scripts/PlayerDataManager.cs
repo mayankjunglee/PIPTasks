@@ -4,7 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 public class PlayerDataManager
 {
-    public PlayerData LoadPlayerData()
+    public static PlayerData LoadPlayerData()
     {
         var pData = new PlayerData();
         XmlSerializer ser = new XmlSerializer(typeof(PlayerData));
@@ -18,9 +18,8 @@ public class PlayerDataManager
         }
         return pData;
     }
-    public void SavePlayerData(PlayerDataOneUnit unit)
+    public static void SavePlayerData(PlayerDataOneUnit unit)
     {
-        // PlayerPrefs.DeleteAll();
         PlayerData data = LoadPlayerData();
         data.playerDataList.Add(unit);
         XmlSerializer ser = new XmlSerializer(typeof(PlayerData));
