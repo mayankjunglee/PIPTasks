@@ -38,7 +38,7 @@ public class RectangleCalculator
                 }
             }
         }
-        //CombineInXdirection(overlayRects);
+        CombineInXdirection(overlayRects);
         return overlayRects;
     }
     
@@ -52,8 +52,9 @@ public class RectangleCalculator
             {
                 Rectangle rectangle = GetRectangle(rectangles[i-1].v00.x,rectangles[i].v11.x,
                 rectangles[i-1].v00.y,rectangles[i].v11.y);
-                rectangles.Insert(i,rectangle);
-                rectangles.RemoveAt(i+1);
+                rectangles.Insert(i-1,rectangle);
+                rectangles.RemoveAt(i);
+                rectangles.RemoveAt(i);
             }
         }
     }
