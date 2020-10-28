@@ -552,7 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mImgObj: {fileID: 5108077986937707186, guid: 35bf0db7efaaf574d8837224909dbf48, type: 3}
   mObjToHighlight:
-  - {fileID: 277203864}
+  - {fileID: 1325848754}
   - {fileID: 1930093374}
   mCanvas: {fileID: 1923452919}
   mParent: {fileID: 1877037697}
@@ -673,7 +673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -540, y: 300}
+  m_AnchoredPosition: {x: -537, y: 300}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1325848755
